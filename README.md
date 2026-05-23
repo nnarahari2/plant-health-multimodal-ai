@@ -1,71 +1,73 @@
-# Multimodal Plant Health Intelligence System 🌱
+# Plant Health Multimodal AI
 
-A deep learning project exploring multimodal learning for plant health prediction using plant imagery and environmental data.
+## Overview
 
-## Goal
+This project implements a multimodal plant health monitoring system using computer vision and environmental sensor fusion.
 
-This project investigates whether combining visual plant information with environmental features can improve prediction performance.
+The system combines:
+- Plant image classification using deep learning
+- Environmental sensor data collection
+- Multimodal fusion for plant health prediction
 
-Models compared:
+## Features
 
-- Image-only model
-- Sensor-only model
-- Image + sensor fusion model
-
-The goal is to determine whether multimodal learning improves plant health classification compared to single-input approaches.
-
-## Tech Stack
-
-- Python
-- PyTorch
-- OpenCV
-- NumPy
-- Pandas
-- Scikit-Learn
-
-## Planned Architecture
-
-### Image Branch
-
-Plant Image → CNN → Feature Extraction
-
-### Sensor Branch
-
-Temperature  
-Humidity  
-Soil Moisture  
-Light Level  
-
-→ MLP → Feature Extraction
-
-### Fusion
-
-Image Features + Sensor Features  
-↓  
-Fusion Layer  
-↓  
-Plant Health Prediction
-
-## Project Status
-
-🚧 Currently in development
-
-Planned phases:
-
-- Dataset collection
-- Environmental data generation
-- Image-only baseline
-- Sensor-only baseline
+- CNN-based image classification
+- Sensor-based environmental monitoring
 - Multimodal fusion model
-- Experiments and evaluation
+- Real-time image inference
+- Confusion matrix evaluation
+- Accuracy comparison visualization
 
-## Motivation
+## Model Architecture
 
-Inspired by prior work involving agricultural sensing systems and an interest in artificial intelligence, computer vision, and intelligent systems.
+The image branch uses ResNet18 for feature extraction.
+
+The sensor branch uses a multilayer perceptron (MLP) for processing:
+- Temperature
+- Humidity
+- Soil moisture
+
+The extracted features are fused together for final prediction.
+
+## Hardware Components
+
+- ESP32
+- DHT22 temperature/humidity sensor
+- Capacitive soil moisture sensor
+- Breadboard
+- Jumper wires
+
+## Results
+
+| Model | Accuracy |
+|---|---|
+| Image Model | 91.28% |
+| Sensor Model | 30.80% |
+| Fusion Model | 90.00% |
+
+The project includes:
+- Accuracy comparison plots
+- Confusion matrices
+- Fusion model evaluation
+
+## Project Structure
+
+```text
+plant-health-multimodal-ai/
+│
+├── data/
+├── models/
+├── notebooks/
+├── results/
+├── scripts/
+├── demo/
+├── README.md
+```
 
 ## Future Work
 
-- Add real sensor hardware integration
-- Expand to additional plant datasets
-- Investigate uncertainty and robustness methods
+- Real-time sensor integration
+- Live multimodal inference
+- Edge deployment
+- Flask dashboard
 
